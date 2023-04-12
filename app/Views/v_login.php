@@ -6,7 +6,19 @@
     <div class="login-box-body">
         <p class="login-box-msg">Silahkan Login</p>
 
-        <form action="../../index2.html" method="post">
+        <?php
+        $errors = session()->getFlashdata('errors');
+        if (!empty($errors)) { ?>
+            <div class="alert alert-danger" role="alert">
+                <ul>
+                    <?php foreach ($errors as $key => $value) { ?>
+                        <li><?= esc($value) ?></li>
+                    <?php } ?>
+                </ul>
+            </div>
+        <?php } ?>
+
+        <?php echo form_open('auth/cek_login') ?>
             <div class="form-group has-feedback">
                 <input name="username" type="text" class="form-control" placeholder="Username">
                 <span class="fa fa-user form-control-feedback"></span>
@@ -31,7 +43,7 @@
                 </div>
                 <!-- /.col -->
             </div>
-        </form>
+        <?php echo form_close() ?>
 
 
 
