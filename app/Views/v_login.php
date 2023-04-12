@@ -1,6 +1,6 @@
 <div class="login-box">
     <div class="login-logo">
-        <a href="<?= base_url() ?>"><b>Login</b>SIAKAD</a>
+        <a href="<?= base_url('auth') ?>"><b>Login</b>SIAKAD</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
