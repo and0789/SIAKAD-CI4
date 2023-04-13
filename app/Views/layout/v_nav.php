@@ -11,6 +11,8 @@
                     <li><a href="#">Program Studi</a></li>
                     <li><a href="#">Dosen</a></li>
                     <li><a href="#">Mahasiswa</a></li>
+                    <li><a href="<?= base_url('gedung') ?>">Gedung</a></li>
+                    <li><a href="<?= base_url('ruangan') ?>">Ruangan</a></li>
                 </ul>
             </li>
             <li><a href="#">About</a></li>
