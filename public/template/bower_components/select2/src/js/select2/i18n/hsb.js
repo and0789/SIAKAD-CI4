@@ -1,20 +1,20 @@
 define(function () {
   // Upper Sorbian
-  var charsWords = ['znamješko', 'znamješce', 'znamješka','znamješkow'];
-  var itemsWords = ['zapisk', 'zapiskaj', 'zapiski','zapiskow'];
+  var charsWords = ['znamješko', 'znamješce', 'znamješka', 'znamješkow'];
+  var itemsWords = ['zapisk', 'zapiskaj', 'zapiski', 'zapiskow'];
 
   var pluralWord = function pluralWord(numberOfChars, words) {
     if (numberOfChars === 1) {
-        return words[0];
+      return words[0];
     } else if (numberOfChars === 2) {
       return words[1];
-    }  else if (numberOfChars > 2 && numberOfChars <= 4) {
+    } else if (numberOfChars > 2 && numberOfChars <= 4) {
       return words[2];
     } else if (numberOfChars >= 5) {
       return words[3];
     }
   };
-  
+
   return {
     errorLoading: function () {
       return 'Wuslědki njedachu so začitać.';
@@ -22,12 +22,12 @@ define(function () {
     inputTooLong: function (args) {
       var overChars = args.input.length - args.maximum;
 
-      return 'Prošu zhašej ' + overChars + ' ' + 
+      return 'Prošu zhašej ' + overChars + ' ' +
         pluralWord(overChars, charsWords);
     },
     inputTooShort: function (args) {
       var remainingChars = args.minimum - args.input.length;
-      
+
       return 'Prošu zapodaj znajmjeńša ' + remainingChars + ' ' +
         pluralWord(remainingChars, charsWords);
     },

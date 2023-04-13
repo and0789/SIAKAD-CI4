@@ -4,80 +4,77 @@
 //! license : MIT
 //! momentjs.com
 
-import { hooks as moment, setHookCallback } from './lib/utils/hooks';
-
-moment.version = '2.20.1';
-
+import {hooks as moment, setHookCallback} from './lib/utils/hooks';
 import {
-    min,
-    max,
-    now,
+    createInvalid as invalid,
+    createInZone as parseZone,
+    createLocal as local,
+    createUnix as unix,
+    createUTC as utc,
     isMoment,
+    max,
+    min,
     momentPrototype as fn,
-    createUTC       as utc,
-    createUnix      as unix,
-    createLocal     as local,
-    createInvalid   as invalid,
-    createInZone    as parseZone
+    now
 } from './lib/moment/moment';
 
-import {
-    getCalendarFormat
-} from './lib/moment/calendar';
+import {getCalendarFormat} from './lib/moment/calendar';
 
 import {
     defineLocale,
-    updateLocale,
+    getLocale as localeData,
     getSetGlobalLocale as locale,
-    getLocale          as localeData,
-    listLocales        as locales,
-    listMonths         as months,
-    listMonthsShort    as monthsShort,
-    listWeekdays       as weekdays,
-    listWeekdaysMin    as weekdaysMin,
-    listWeekdaysShort  as weekdaysShort
+    listLocales as locales,
+    listMonths as months,
+    listMonthsShort as monthsShort,
+    listWeekdays as weekdays,
+    listWeekdaysMin as weekdaysMin,
+    listWeekdaysShort as weekdaysShort,
+    updateLocale
 } from './lib/locale/locale';
 
 import {
-    isDuration,
-    createDuration              as duration,
-    getSetRelativeTimeRounding  as relativeTimeRounding,
-    getSetRelativeTimeThreshold as relativeTimeThreshold
+    createDuration as duration,
+    getSetRelativeTimeRounding as relativeTimeRounding,
+    getSetRelativeTimeThreshold as relativeTimeThreshold,
+    isDuration
 } from './lib/duration/duration';
 
-import { normalizeUnits } from './lib/units/units';
+import {normalizeUnits} from './lib/units/units';
 
 import isDate from './lib/utils/is-date';
 
+moment.version = '2.20.1';
+
 setHookCallback(local);
 
-moment.fn                    = fn;
-moment.min                   = min;
-moment.max                   = max;
-moment.now                   = now;
-moment.utc                   = utc;
-moment.unix                  = unix;
-moment.months                = months;
-moment.isDate                = isDate;
-moment.locale                = locale;
-moment.invalid               = invalid;
-moment.duration              = duration;
-moment.isMoment              = isMoment;
-moment.weekdays              = weekdays;
-moment.parseZone             = parseZone;
-moment.localeData            = localeData;
-moment.isDuration            = isDuration;
-moment.monthsShort           = monthsShort;
-moment.weekdaysMin           = weekdaysMin;
-moment.defineLocale          = defineLocale;
-moment.updateLocale          = updateLocale;
-moment.locales               = locales;
-moment.weekdaysShort         = weekdaysShort;
-moment.normalizeUnits        = normalizeUnits;
-moment.relativeTimeRounding  = relativeTimeRounding;
+moment.fn = fn;
+moment.min = min;
+moment.max = max;
+moment.now = now;
+moment.utc = utc;
+moment.unix = unix;
+moment.months = months;
+moment.isDate = isDate;
+moment.locale = locale;
+moment.invalid = invalid;
+moment.duration = duration;
+moment.isMoment = isMoment;
+moment.weekdays = weekdays;
+moment.parseZone = parseZone;
+moment.localeData = localeData;
+moment.isDuration = isDuration;
+moment.monthsShort = monthsShort;
+moment.weekdaysMin = weekdaysMin;
+moment.defineLocale = defineLocale;
+moment.updateLocale = updateLocale;
+moment.locales = locales;
+moment.weekdaysShort = weekdaysShort;
+moment.normalizeUnits = normalizeUnits;
+moment.relativeTimeRounding = relativeTimeRounding;
 moment.relativeTimeThreshold = relativeTimeThreshold;
-moment.calendarFormat        = getCalendarFormat;
-moment.prototype             = fn;
+moment.calendarFormat = getCalendarFormat;
+moment.prototype = fn;
 
 // currently HTML5 input type only supports 24-hour formats
 moment.HTML5_FMT = {
