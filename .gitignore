@@ -124,16 +124,3 @@ nb-configuration.xml
 /results/
 /phpunit*.xml
 /.phpunit.*.cache
-
-/template/pages/
-/template/documentation/
-/template/build/
-/template/.github/
-/template/.gitignore
-/template/.npmignore
-/template/.json
-/template/.md
-/template/.js
-/template/.lock
-/template/.html
-/template/LICENSE
