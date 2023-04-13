@@ -43,6 +43,7 @@ class Filters extends BaseConfig
             'authfilter' => [ 'except' => [
                 'admin', 'admin/*',
                 'home', 'home/*',
+                'fakultas', 'fakultas/*',
                 '/'
             ]],
             'toolbar',
