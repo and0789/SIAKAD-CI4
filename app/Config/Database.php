@@ -27,10 +27,18 @@ class Database extends Config
     public array $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
-        'username' => 'root',
-        'password' => '',
-        'database' => 'db-siakad-kampus',
-        'DBDriver' => 'MySQLi',
+//        in postgres
+        'username' => 'andreseptian',
+        'password' => '123456',
+        'database' => 'dbsiakad',
+        'DBDriver' => 'Postgre',
+//        in mysql
+//        'username' => 'root',
+//        'password' => '',
+//        'database' => 'db-siakad-kampus',
+//        'DBDriver' => 'MySQLi',
+
+
         'DBPrefix' => '',
         'pConnect' => false,
         'DBDebug'  => true,
@@ -41,7 +49,9 @@ class Database extends Config
         'compress' => false,
         'strictOn' => false,
         'failover' => [],
-        'port'     => 3306,
+        'port'     => 5332,
+//        'port'     => 3306,
+
     ];
 
     /**
