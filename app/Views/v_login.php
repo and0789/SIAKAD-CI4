@@ -18,6 +18,22 @@
             </div>
         <?php } ?>
 
+        <?php
+            if (session()->getFlashdata('pesan')) {
+                echo '<div class="alert alert-warning" role="alert">';
+                echo session()->getFlashdata('pesan');
+                echo '</div>';
+            }
+        ?>
+
+        <?php
+        if (session()->getFlashdata('sukses')) {
+            echo '<div class="alert alert-success" role="alert">';
+            echo session()->getFlashdata('sukses');
+            echo '</div>';
+        }
+        ?>
+
         <?php echo form_open('auth/cek_login') ?>
             <div class="form-group has-feedback">
                 <input name="username" type="text" class="form-control" placeholder="Username">

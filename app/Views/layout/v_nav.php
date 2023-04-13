@@ -1,20 +1,20 @@
 <!-- Collect the nav links, forms, and other content for toggling -->
 <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
     <ul class="nav navbar-nav">
-        <li><a href=<?= base_url() ?>>Home <span class="sr-only">(current)</span></a></li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Master <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
-            </ul>
-        </li>
-        <li><a href="#">About</a></li>
+
+        <?php if (session()->get('level') == "1") { ?>
+            <li><a href=<?= base_url('admin') ?>>Dashboard </a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Master <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Fakultas</a></li>
+                    <li><a href="#">Program Studi</a></li>
+                    <li><a href="#">Dosen</a></li>
+                    <li><a href="#">Mahasiswa</a></li>
+                </ul>
+            </li>
+            <li><a href="#">About</a></li>
+        <?php } ?>
     </ul>
 
 </div>
@@ -30,20 +30,28 @@
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <!-- The user image in the navbar-->
-                    <img src="<?= base_url() ?>/template/dist/img/user2-160x160.jpg" class="user-image"
+                    <img src="<?= base_url('photo/'. session()->get('foto')) ?>" class="user-image"
                          alt="User Image">
                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                    <span class="hidden-xs">Alexander Pierce</span>
+                    <span class="hidden-xs"><?= strtoupper(session()->get('nama')) ?></span>
                 </a>
                 <ul class="dropdown-menu">
                     <!-- The user image in the menu -->
                     <li class="user-header">
-                        <img src="<?= base_url() ?>/template/dist/img/user2-160x160.jpg" class="img-circle"
+                        <img src="<?= base_url('photo/'. session()->get('foto')) ?>" class="img-circle"
                              alt="User Image">
 
                         <p>
-                            Andre Septian- Web Developer
-                            <small>Member since Nov. 2012</small>
+                            <?= strtoupper(session()->get('nama')) ?> - <?php
+                            if (session()->get('level') == 1) {
+                                echo 'ADMIN';
+                            } elseif (session()->get('level') == 2) {
+                                echo 'MAHASISWA';
+                            } elseif (session()->get('level') == 3) {
+                                echo 'DOSEN';
+                            }
+                            ?>
+                            <small><?= date('d M Y') ?></small>
                         </p>
                     </li>
 
@@ -53,7 +61,7 @@
                             <a href="#" class="btn btn-default btn-flat">Profile</a>
                         </div>
                         <div class="pull-right">
-                            <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                            <a href="<?= base_url('auth/logout') ?>" class="btn btn-default btn-flat">Log out</a>
                         </div>
                     </li>
                 </ul>
