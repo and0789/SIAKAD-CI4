@@ -33,6 +33,11 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?= base_url() ?>/template/dist/js/demo.js"></script>
 <!-- page script -->
+
+<script src="<?= base_url() ?>/template/dist/js/sweetalert.min.js"></script>
+<!--<script src="--><?php //= base_url() ?><!--/template/dist/js/jquery.min.js"></script>-->
+
+
 <script>
     $(function () {
         $('#example1').DataTable()
@@ -53,5 +58,27 @@
         });
     }, 3000);
 </script>
+
+<!--<script>-->
+<!--    function hapus_data(id_semester) {-->
+<!--        swal({-->
+<!--            title: "Are you sure?",-->
+<!--            text: "Once deleted, you will not be able to recover this imaginary file!",-->
+<!--            icon: "warning",-->
+<!--            buttons: true,-->
+<!--            dangerMode: true,-->
+<!--        })-->
+<!--            .then((willDelete) => {-->
+<!--                if (willDelete) {-->
+<!--                    swal("Poof! Your imaginary file has been deleted!", {-->
+<!--                        icon: "success",-->
+<!--                    });-->
+<!--                } else {-->
+<!--                    swal("Your imaginary file is safe!");-->
+<!--                }-->
+<!--            });-->
+<!--    }-->
+<!--</script>-->
+
 </body>
 </html>
