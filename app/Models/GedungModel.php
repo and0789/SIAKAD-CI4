@@ -9,7 +9,7 @@ class GedungModel extends Model
     public function allData()
     {
         return $this->db->table('tbl_gedung')
-            ->orderBy('id_gedung', 'DESC')
+            ->orderBy('id_gedung', 'ASC')
             ->get()->getResultArray();
     }
 

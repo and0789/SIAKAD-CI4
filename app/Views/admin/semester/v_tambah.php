@@ -66,7 +66,7 @@
                                 </div>
 
 
-                                <div class="col-lg-6">
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Tanggal Mulai</label>
                                         <input type="date" name="mulai_semester" class="form-control
@@ -77,6 +77,7 @@
                                             session()->getFlashData('errorMulaiSemester') . "</div>" : ''; ?>
                                     </div>
                                 </div>
+
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label >Tanggal Selesai</label>

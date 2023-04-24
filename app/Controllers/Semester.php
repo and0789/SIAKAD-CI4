@@ -19,7 +19,7 @@ class Semester extends BaseController
         $data = [
             'data_semester' => $semester_model->allData(),
             'title' => 'Manajemen Data Periode Semester',
-            'content' => 'admin/semester/v_data',
+            'content' => 'admin/semester/v_index',
         ];
         return view('layout/v_wrapper', $data);
     }
