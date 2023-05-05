@@ -16,11 +16,26 @@
                 </ul>
             </li>
             <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Akademik<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="<?= base_url('semester') ?>">Menu 1</a></li>
+                    <li><a href="<?= base_url('semester') ?>">Menu 2</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Setting<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
+                    <li><a href="<?= base_url('user') ?>">User</a></li>
                     <li><a href="<?= base_url('semester') ?>">Periode Semester</a></li>
                 </ul>
             </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+
+                </ul>
+            </li>
+
         <?php } ?>
     </ul>
 

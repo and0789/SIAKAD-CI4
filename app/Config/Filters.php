@@ -48,6 +48,7 @@ class Filters extends BaseConfig
                 'semester', 'semester/*',
                 'ruangan', 'ruangan/*',
                 'dosen', 'dosen/*',
+                'user', 'user/*',
                 '/'
             ]],
             'toolbar',
