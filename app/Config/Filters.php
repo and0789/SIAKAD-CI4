@@ -47,6 +47,7 @@ class Filters extends BaseConfig
                 'gedung', 'gedung/*',
                 'semester', 'semester/*',
                 'ruangan', 'ruangan/*',
+                'dosen', 'dosen/*',
                 '/'
             ]],
             'toolbar',

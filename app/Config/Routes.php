@@ -31,6 +31,16 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+// Dosen
+$routes->get('/dosen/index', 'Dosen::index');
+$routes->get('/dosen/getData', 'Dosen::getData');
+$routes->get('/dosen/formTambah', 'Dosen::formTambah');
+$routes->post('/dosen/save', 'Dosen::save');
+$routes->delete('/dosen/delete/(:any)', 'Dosen::delete/$1');
+$routes->get('/dosen/formEdit/(:any)', 'Dosen::formEdit/$1');
+$routes->put('/dosen/update', 'Dosen::updateData');
+// End Dosen
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

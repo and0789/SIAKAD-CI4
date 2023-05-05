@@ -9,7 +9,7 @@
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="<?= base_url('fakultas') ?>">Fakultas</a></li>
                     <li><a href="#">Program Studi</a></li>
-                    <li><a href="#">Dosen</a></li>
+                    <li><a href="<?= site_url('dosen/index') ?>">Dosen</a></li>
                     <li><a href="#">Mahasiswa</a></li>
                     <li><a href="<?= base_url('gedung') ?>">Gedung</a></li>
                     <li><a href="<?= base_url('ruangan') ?>">Ruangan</a></li>
